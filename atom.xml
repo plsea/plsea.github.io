@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-25T15:33:28.748Z</updated>
+  <updated>2016-07-07T22:14:00.435Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>word-wrap与word-break的区别</title>
+    <link href="http://yoursite.com/2016/07/08/word-wrap%E4%B8%8Eword-break%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2016/07/08/word-wrap与word-break的区别/</id>
+    <published>2016-07-07T22:11:25.000Z</published>
+    <updated>2016-07-07T22:14:00.435Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;word-wrap与word-break&quot;&gt;&lt;a href=&quot;#word-wrap与word-break&quot; class=&quot;headerlink&quot; title=&quot;word-wrap与word-break&quot;&gt;&lt;/a&gt;word-wrap与word-break&lt;/h2&gt;&lt;p&gt;在偶然的一次测试当中试到了一连串相同字母在一个P标签内溢出的情况，于是在网上找了解决办法，了解到了word-wrap与word-break。&lt;/p&gt;
+&lt;p&gt;首先看一下出现的情况：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge,chrome=1&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;title&amp;gt;Examples&amp;lt;/title&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;link href=&amp;quot;&amp;quot; rel=&amp;quot;stylesheet&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	p&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		width: 200px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		height: 200px;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		border: 1px solid #c9c;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;p&amp;gt;this is a long wordddddddddddddddddddddddd&amp;lt;/p&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i4.piimg.com/567571/5a201cfbeabe9fde.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可以明确一点就是浏览器默认的时候，如果有一个单词很长，导致一行中剩下的空间已经放不下它时，则浏览器会把这个单词挪到下一行去，就是上图的效果。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;此时我们给p标签加上&lt;code&gt;word-wrap:break-word;&lt;/code&gt;效果如图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i2.piimg.com/567571/5fc84bf2ca7e5ae9.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到wordddddddddddddddddddddddd这个单词原本是应该接在long后面的，但是long后面的空间已经容纳不了这个单词，所以浏览器就把移到了下一行，而加上了&lt;code&gt;word-wrap:break-word;&lt;/code&gt;就是为了防止长单词溢出，就在它的内部断句了。这就是&lt;code&gt;word-wrap:break-word;&lt;/code&gt;的功能。&lt;br&gt;&lt;img src=&quot;http://i2.piimg.com/567571/cf39fb3927e0c694.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到&lt;code&gt;word-wrap:break-word&lt;/code&gt;的兼容性很好，所有主流浏览器都支持&lt;strong&gt;word-wrap属性&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;那么它和&lt;code&gt;word-break: break-all&lt;/code&gt;的区别是什么呢？&lt;br&gt;&lt;img src=&quot;http://i2.piimg.com/567571/20a652b9d742d7bb.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上图是&lt;code&gt;word-break: break-all&lt;/code&gt;的效果，可以看到长单词继续在long后面显示，到了容器边缘才进行了换行，浏览器并没有把它直接移到下一行，而是“不浪费一点空间的”把它塞到前面单词的后面，这就是二者的区别。&lt;br&gt;&lt;img src=&quot;http://i2.piimg.com/567571/cf39fb3927e0c694.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;所有主流浏览器都支持&lt;strong&gt;word-break 属性&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;word-wrap&lt;/code&gt;是用来决定允不允许单词内断句的，如果不允许的话长单词就会溢出。最重要的一点是它还是会首先尝试挪到下一行，看看下一行的宽度够不够，不够的话就进行单词内的断句。&lt;br&gt;而&lt;code&gt;word-break:break-all&lt;/code&gt;则更强硬，因为它断句的方式非常粗暴，它不会尝试把长单词挪到下一行，而是直接进行单词内的断句。这也可以解释为什么说它的作用是决定用什么方式来断句的，那就是——用了word-break:break-all，就等于使用粗暴方式来断句了。总之一句话，如果你想更节省空间，那就用word-break:break-all就对了！&lt;br&gt;但无论如何，单词内的断句都会对英文的可读性产生一定的影响，这是要注意的地方。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;word-wrap与word-break&quot;&gt;&lt;a href=&quot;#word-wrap与word-break&quot; class=&quot;headerlink&quot; title=&quot;word-wrap与word-break&quot;&gt;&lt;/a&gt;word-wrap与word-break&lt;/h2&gt;&lt;
+    
+    </summary>
+    
+      <category term="Tec" scheme="http://yoursite.com/categories/Tec/"/>
+    
+    
+      <category term="word-wrap,word-break" scheme="http://yoursite.com/tags/word-wrap-word-break/"/>
+    
+  </entry>
   
   <entry>
     <title>理想与现实生活的困惑</title>
